@@ -41,6 +41,9 @@ def rmsd(predicted,reference):
         raise ValueError(message)
 
     # Calculate the RMSE
-    r = np.sqrt(np.sum(np.square(predicted - reference))/len(predicted))
+    r = np.sqrt(np.mean(np.square(predicted - reference)))
+    #or 
+#     r = np.sqrt(np.nanmean(np.square(predicted - reference)))
+
 
     return r
